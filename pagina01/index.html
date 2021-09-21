@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Gabriel</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="header" id="inicio">
+        <img src="img/HAMBURGUESA.svg" alt="" class="hamburger">
+        <nav class="menu-navegacion ">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicio">Servicio</a>
+            <a href="#galeria">Galería</a>
+            <a href="#expertos">Expertos</a>
+            <a href="#contacto">Contácto</a>
+        </nav>
+        <div class="contenedor head">
+            <h1 class="titulo" >convertimos tus sueños en realidad</h1>
+            <p class="copy">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor" id="servicio">
+            <h2 class="subtitulo">Nuestro servicio</h2>
+            <div class="contenedor-servicio">
+                <img src="img/Shopping.svg" alt="">
+                <div class="shopping-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Diseño Web</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                         Ipsam repellendus aut perferendis, 
+                         molestiae facilis quos dolores laboriosam minima sapiente eveniet!</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Diseño Web</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                         Ipsam repellendus aut perferendis, 
+                         molestiae facilis quos dolores laboriosam minima sapiente eveniet!</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Diseño Web</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                         Ipsam repellendus aut perferendis, 
+                         molestiae facilis quos dolores laboriosam minima sapiente eveniet!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery" id="galeria">
+            <div class="contenedor">
+                <h2 class="subtitulo">Galería</h2>
+                <div class="contenedor-galeria">
+                    <img src="img/uno.png" alt="" class="img-galeria" >
+                    <img src="img/dos.png" alt="" class="img-galeria" >
+                    <img src="img/tres.png" alt="" class="img-galeria" >
+                    <img src="img/cuatro.png" alt="" class="img-galeria" >
+                    <img src="img/cinco.png" alt="" class="img-galeria" >
+                    <img src="img/seis.png" alt="" class="img-galeria" >
+                </div>
+            </div>
+        </section>
+        <body >
+        <section class="section2">    
+            <h1 style="color: rgb(189, 49, 49);"> Promociones </h1>
+            <br>
+            <h3 style="color: rgb(0, 174, 255);">Pantalones</h3>
+            <div>
+                <input type="checkbox" value="1" class="opciones">Lorem, ipsum./ 1.40
+                <br>
+                <input type="checkbox" value="62" class="opciones">Lorem, ipsum. S/ 62.00
+                <br>
+                <input type="checkbox" value="14" class="opciones"> Lorem, ipsum. S/ 14.00
+            </div>
+            <br>
+            
+            <h3 style="color: rgb(0, 174, 255);"> Pnatalones rotos xd </h3>
+            <div>
+                <input type="checkbox" value="15" class="opciones">Lorem, ipsum.  S/ 105.90
+                <br>
+                <input type="checkbox" value="13" class="opciones">Lorem, ipsum. S/ 13.80
+                <br>
+                <input type="checkbox" value="62" class="opciones">Lorem, ipsum. 62.40
+            </div>
+            <br>
+            <h3 style="color: rgb(0, 174, 255);">colores pasteles </h3>
+            <div>
+                <input type="checkbox" value="34" class="opciones">Lorem, ipsum. S/ 34.00
+                <br>
+                <input type="checkbox" value="171" class="opciones">Lorem, ipsum. S/ 171.90
+                <br>
+                <input type="checkbox" value="36" class="opciones">Lorem, ipsum. S/ 36.40
+            </div>
+            <br>
+            <h2 id="total">S/00.00</h2>
+            <br>
+            <br>
+            <Button id="boton">finalizar compra</BUtton>
+        
+            <p id="resumen"></p>
+            <script>
+                let totalElement = document.getElementById("total");
+                let boton = document.getElementById("boton");
+                let resumen = document.getElementById("resumen");
+                let total = 0 
+                let opciones = document.getElementsByClassName("opciones");
+                for(let i = 0;i<opciones.length;i++){
+                    opciones[i].addEventListener("click",function(){
+                        if(this.checked){
+                            total+=parseInt(this.value);
+                        }else{
+                            total-=parseInt(this.value);
+                        }
+                        totalElement.innerText = "S/ " + total;
+                    })
+                }
+                boton.addEventListener("click", function(){
+                    if(total == 0){
+                        resumen.innerText = "No ha comprado nada";
+                    }else{
+                        resumen.innerText = "El total de la compra es S/" + total;
+                    }
+                });
+            </script>
+            </section>  
+        <section class="clientes contenedor">
+            <i><h2 class="titulo2">Comentarios Destacados</h2></i>
+            <div class="cards">
+                <div class="card">
+                    <img src="img/clienta.png" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Renzo</h4>
+                        <p>Me encantó pasar el rato con unas galletas de chocolate</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/gabriel.png" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Lucero</h4>
+                        <p>Muchas gracias por los postres para el cumpleaños de mis sobrinitos!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clientes contenedor">
+            <div class="cards">
+                <div class="card">
+                    <img src="img/cliente.png" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Selena</h4>
+                        <p>Uno de los postres favoritos que me encantan más son los kekes de chocolate </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/Diana.png" alt="">
+                    <div class="contenido-texto-card">
+                        <h4>Isabel</h4>
+                        <p>La mejor pagina de postres que me recomendaron , GRACIAS!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="imagen-light">
+            <img src="img/close.svg" alt="" class="close">
+            <img src="img/modelo2.jpg" alt="" class="agregar-imagen">
+        </section> 
+        <section class="contenedor" id="expertos">
+            <h2 class="subtitulo">Expertos en:</h2>
+            <section class="experts">
+                <div class="cont-expert">
+                    <img src="img/compras en linea.svg" alt="">
+                    <h3 class="n-expert">Compras en línea</h3>
+                </div>
+                <div class="contenedor-expert">
+                    <img src="img/tienda en linea.svg" alt="">
+                    <h3 class="n-expert">Tienda en línea</h3>
+                </div>
+                <div class="contenedor-expert">
+                    <img src="img/pago en linea.svg" alt="">
+                    <h3 class="n-expert">Pago en línea</h3>
+                </div>
+                <section class="form-registro" >
+                    <h4>Formulario</h4>
+                    <input class="controls" type="text" name="nombres" id="nombres" placeholder="ingrese su Nombre" >
+                    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="ingrese su Apellido" >
+                    <input class="controls" type="email" name="email" id="correo" placeholder="ingrese su Correo" >
+                    <input class="controls" type="password" name="pasword" id="nombres" placeholder="ingrese su Contraseña" >
+                    <p>Estoy de acuerdo con  <a href="#">Terminos y Condiciones </a></p>
+                    <input class="botons" type="submit" value="Registrar">
+                    <p><a href="#">¿Ya tengo cuenta?</a></p>
+                  </section>
+            </section>
+        </section>
+        <script>
+            
+            var usuario = prompt("Ingresa tu Nombre:")
+    
+            if(usuario){
+                alert('BIENVENIDO!!☺☺♥');
+            }
+            
+        </script>
+    </main>
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+            <div class="contact-us">
+                <h2 class="brand">DIAMON'S VIP</h2>
+                <p>Siempre viste a la moda</p>
+            </div>
+            <div class="social-media">
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-facebook-circle' ></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-whatsapp' ></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-instagram' ></i>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/lightbox.js"></script>
+</body>
+</html>
